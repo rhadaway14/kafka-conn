@@ -1,0 +1,23 @@
+{
+    "name": "sink-couchbase",
+    "config": {
+      "connector.class": "com.couchbase.connect.kafka.CouchbaseSinkConnector",
+      "tasks.max": "1",
+      "topics": "couchbase-sink-topic",
+      "couchbase.seed.nodes": "couchbases://<your-connect-string >",
+      "couchbase.bootstrap.timeout": "20s",
+      "couchbase.bucket": "test",
+      "couchbase.scope": "_default",
+      "couchbase.collection": "_default",
+      "couchbase.username": "<username>",
+      "couchbase.password": "<password>",
+      "couchbase.document.id": "/id",
+      "couchbase.enable.tls": "true",
+      "couchbase.trust.certificate.path": "/etc/ssl/certs/capella.pem",
+      "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+      "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+      "value.converter.schemas.enable": "false",
+      "name": "sink-couchbase"
+    }
+  }
+  
